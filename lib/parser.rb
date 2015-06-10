@@ -34,6 +34,8 @@ class Parser
       return RepeatCommand.new(@calculator, @command_store, *args)
     when "cancel"
       return CancelCommand.new(@calculator, *args)
+    when "exit"
+      return ExitCommand.new(@calculator)
     else
       raise ArgumentError
     end

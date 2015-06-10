@@ -2,7 +2,7 @@
 class ExitCommand < BaseCommand
 
   def execute
-    exit!
+    exit
   end
 
 end

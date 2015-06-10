@@ -10,7 +10,7 @@ describe RepeatCommand do
     sub = SubtractCommand.new(calculator, 2)
     sub.execute
     command_store.store(sub)
-    repeat_command = RepeatCommand.new(calculator, command_store, 2)
+    repeat_command = RepeatCommand.new(calculator, 2)
     expect(repeat_command.execute).to eq(6)
   end
 end

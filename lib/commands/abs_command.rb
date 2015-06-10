@@ -9,7 +9,9 @@ class AbsCommand < BaseCommand
   end
 
   def execute
-    @calculator.abs
+    value = @calculator.abs
+    @calculator.add_history(self)
+    value
   end
 
 end

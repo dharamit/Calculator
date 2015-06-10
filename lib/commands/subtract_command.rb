@@ -10,6 +10,8 @@ class SubtractCommand < BaseCommand
   end
 
   def execute
-    @calculator.subtract(@operand)
+    value = @calculator.subtract(@operand)
+    @calculator.add_history(self)
+    value
   end
 end

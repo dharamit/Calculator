@@ -3,6 +3,7 @@ class Calculator
 
   def initialize
     @value = 0
+    @history = CommandStore.new
   end
 
   def add(input)
@@ -55,8 +56,13 @@ class Calculator
     @value = 0
   end
 
-  def repeat(commands)
+  def repeat(operand)
+    commands = @history.get_last(operand)
     commands.each{ |command| command.execute }
     @value
+  end
+
+  def add_history(command)
+    @history.store(command)
   end
 end

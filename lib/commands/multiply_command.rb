@@ -10,6 +10,8 @@ class MultiplyCommand < BaseCommand
   end
 
   def execute
-    @calculator.multiply(@operand)
+    value = @calculator.multiply(@operand)
+    @calculator.add_history(self)
+    value
   end
 end

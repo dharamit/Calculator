@@ -9,6 +9,8 @@ class CancelCommand < BaseCommand
   end
   
   def execute
-    @calculator.cancel()
+    value = @calculator.cancel()
+    @calculator.add_history(self)
+    value
   end
 end

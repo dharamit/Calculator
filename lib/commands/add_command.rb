@@ -8,7 +8,8 @@ class AddCommand < BaseCommand
     @operand = args[0].to_f
   end
   def execute
-    @calculator.add(@operand)
+    value = @calculator.add(@operand)
+    @calculator.add_history(self)
+    value
   end
-
 end

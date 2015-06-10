@@ -9,7 +9,9 @@ class SquareCommand < BaseCommand
   end
   
   def execute
-    @calculator.square
+    value = @calculator.square
+    @calculator.add_history(self)
+    value
   end
 
 end

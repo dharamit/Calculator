@@ -9,7 +9,9 @@ class NegateCommand < BaseCommand
   end
   
   def execute
-    @calculator.negate
+    value = @calculator.negate
+    @calculator.add_history(self)
+    value
   end
 
 end

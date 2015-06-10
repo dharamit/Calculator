@@ -9,7 +9,9 @@ class CubeRootCommand < BaseCommand
   end
   
   def execute
-    @calculator.cube_root
+    value = @calculator.cube_root
+    @calculator.add_history(self)
+    value
   end
 
 end

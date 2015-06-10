@@ -10,6 +10,8 @@ class DivisionCommand < BaseCommand
   end
 
   def execute
-    @calculator.divide(@operand)
+    value = @calculator.divide(@operand)
+    @calculator.add_history(self)
+    value
   end
 end

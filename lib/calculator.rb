@@ -54,4 +54,9 @@ class Calculator
   def cancel
     @value = 0
   end
+
+  def repeat(commands)
+    commands.each{ |command| command.execute }
+    @value
+  end
 end

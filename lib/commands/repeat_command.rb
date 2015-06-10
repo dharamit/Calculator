@@ -11,11 +11,6 @@ class RepeatCommand < BaseCommand
 	end
 
   def execute
-    previous_commands = @command_store.get_last(@operand)
-    value = nil
-    previous_commands.each do |command|
-      value = command.execute
-    end
-    value
+    @calculator.repeat(@command_store.get_last(@operand))
   end
 end

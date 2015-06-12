@@ -1,13 +1,9 @@
 require 'spec_helper'
 
 describe CalculatorCommandLineInterface do
-  pending "return 5 if 'add 5' is called" do
-    calculator_command_line_interface = CalculatorCommandLineInterface.new('add 5')
-    expect(calculator_command_line_interface.process_request).to eq(5)
-  end
-
-  pending "return 0 if 'subtract 5' is called" do
-    calculator_command_line_interface = CalculatorCommandLineInterface.new('subtract 5')
-    expect(calculator_command_line_interface.process_request).to eq(-5)
+  it "sholud print 5 if use input is 'add 5'" do
+    calculator_command_line_interface = CalculatorCommandLineInterface.new
+    allow(calculator_command_line_interface).to receive(:gets).and_return("add 5")
+    expect { calculator_command_line_interface.interaction }.to output(/5.0/).to_stdout
   end
 end

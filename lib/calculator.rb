@@ -1,4 +1,4 @@
-# Performs basic arithmatic operations
+# Performs arithmatic operations
 class Calculator
 
   def initialize

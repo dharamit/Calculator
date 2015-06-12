@@ -36,6 +36,26 @@ describe Calculator do
       calculator.add(25)
       expect(calculator.divide(5)).to eq(5)
     end
+
+    it "should raise ZeroDivisionError" do
+      calculator = Calculator.new
+      calculator.add(25)
+      expect{calculator.divide(0)}.to raise_error(ZeroDivisionError)
+    end
+  end
+
+  context "Square root" do
+    it "should return 5 when input is 25 " do
+      calculator = Calculator.new
+      calculator.add(25)
+      expect(calculator.square_root).to eq(5)
+    end
+
+    it "should raise Math::DomainError when input is negative" do
+      calculator = Calculator.new
+      calculator.add(-25)
+      expect{calculator.square_root}.to raise_error(Math::DomainError)
+    end
   end
 
 end

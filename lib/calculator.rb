@@ -30,9 +30,6 @@ class Calculator
   end
 
   def square_root
-    if @value < 0
-      raise ArgumentError
-    end
     @value = Math.sqrt(@value)
   end
 

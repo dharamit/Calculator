@@ -29,3 +29,6 @@ PLATFORMS
 DEPENDENCIES
   rspec
   simplecov
+
+BUNDLED WITH
+   1.10.3

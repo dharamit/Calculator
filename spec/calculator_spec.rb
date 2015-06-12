@@ -58,4 +58,12 @@ describe Calculator do
     end
   end
 
+  context "Cube" do
+    it "should return 125 when 5 is input" do
+      calculator = Calculator.new
+      calculator.add(5)
+      expect(calculator.cube).to eq(125)
+    end
+  end
+
 end
